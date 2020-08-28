@@ -1,0 +1,58 @@
+/* * * * * * * * * * * * * * * * * * * * *
+ * @package  : dan0sz/widget-area-halfway-post-gp
+ * @author   : Daan van den Bergh
+ * @copyright: (c) 2020 Daan van den Bergh
+ * @url      : https://daan.dev
+ * * * * * * * * * * * * * * * * * * * * */
+
+.halfway-post {
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    padding: 60px 80px;
+    margin: 30px 0;
+}
+
+.halfway-post h3 {
+    margin-top: 0;
+}
+
+.halfway-post p {
+    margin-top: 15px;
+    margin-bottom: 0;
+}
+
+.halfway-post li {
+    list-style: none;
+}
+
+.halfway-post form {
+    margin: 15px 0 15px;
+}
+
+.halfway-post input {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0 0;
+}
+
+.halfway-post input[name="FNAME"],
+.halfway-post input[name="LNAME"] {
+    display: inline-block;
+    width: 49.2%;
+}
+
+.halfway-post input[name="FNAME"] {
+    margin-right: 5px;
+}
+
+@media only screen and (max-width: 768px) {
+    .halfway-post {
+        padding: 0;
+    }
+
+    .halfway-post input[name="FNAME"],
+    .halfway-post input[name="LNAME"] {
+        width: 100%;
+    }
+}
