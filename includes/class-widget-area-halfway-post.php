@@ -23,11 +23,13 @@ class WidgetAreaHalfwayPost
     }
 
     /**
-     * Hook into required actions.
+     * Hook into required actions. The stylesheet is added right before the closing <body> tag, because we don't need it
+     * above the fold.
      */
     private function init()
     {
         add_action('widgets_init', [$this, 'register_sidebar'], 0, 100);
+        add_action('wp_footer', [$this, 'maybe_enqueue_stylesheet']);
         add_action('wp', [$this, 'maybe_insert_sidebar'], 0, 200);
     }
 
@@ -40,8 +42,17 @@ class WidgetAreaHalfwayPost
             && is_single()
             && get_post_type() == 'post'
         ) {
-            wp_enqueue_style($this->handle, plugin_dir_url(DAAN_WIDGET_AREA_HALFWAY_POST_PLUGIN_FILE) . 'assets/css/widget-area-halfway-post.min.css', ['generate-style' ], DAAN_WIDGET_AREA_HALFWAY_POST_STATIC_VERSION);
             add_filter('the_content', [$this, 'insert_sidebar']);
+        }
+    }
+
+    public function maybe_enqueue_stylesheet()
+    {
+        if (!is_admin()
+            && is_single()
+            && get_post_type() == 'post'
+        ) {
+            wp_enqueue_style($this->handle, plugin_dir_url(DAAN_WIDGET_AREA_HALFWAY_POST_PLUGIN_FILE) . 'assets/css/widget-area-halfway-post.min.css', [], DAAN_WIDGET_AREA_HALFWAY_POST_STATIC_VERSION);
         }
     }
 
