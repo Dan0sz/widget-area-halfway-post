@@ -37,11 +37,11 @@ function daan_widget_area_halfway_post_autoload($class)
         return;
     }
 
-    if (!class_exists('Woosh_Autoloader')) {
-        require_once(DAAN_WIDGET_AREA_HALFWAY_POST_PLUGIN_DIR . 'woosh-autoload.php');
+    if (!class_exists('FFWP_Autoloader')) {
+        require_once(DAAN_WIDGET_AREA_HALFWAY_POST_PLUGIN_DIR . 'ffwp-autoload.php');
     }
 
-    $autoload = new Woosh_Autoloader($class);
+    $autoload = new FFWP_Autoloader($class);
 
     return include DAAN_WIDGET_AREA_HALFWAY_POST_PLUGIN_DIR . 'includes/' . $autoload->load();
 }
