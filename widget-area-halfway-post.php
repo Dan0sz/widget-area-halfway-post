@@ -4,7 +4,7 @@
  * Plugin Name: Widget Area Halfway Post
  * Plugin URI: https://github.com/Dan0sz/widget-area-halfway-post
  * Description: Add a widget area before the middle chapter of your post's content.
- * Version: 1.0.1
+ * Version: 1.0.2
  * Author: Daan van den Bergh
  * Author URI: https://daan.dev
  * Text Domain: widget-area-halfway-post-gp
