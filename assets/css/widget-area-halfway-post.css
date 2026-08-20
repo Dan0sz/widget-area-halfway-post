@@ -8,8 +8,7 @@
 .halfway-post {
     text-align: center;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-    padding: 60px 80px;
-    margin: 30px 0;
+    padding: 1rem 4rem;
 }
 
 .halfway-post h3 {
@@ -17,7 +16,7 @@
 }
 
 .halfway-post p {
-    margin-top: 15px;
+    margin-top: 1rem;
     margin-bottom: 0;
 }
 
@@ -26,33 +25,10 @@
 }
 
 .halfway-post form {
-    margin: 15px 0 15px;
+    margin: 1rem 0 1rem;
 }
 
 .halfway-post input {
-    display: block;
-    width: 100%;
-    padding: 15px;
-    margin: 10px 0 0;
-}
-
-.halfway-post input[name="FNAME"],
-.halfway-post input[name="LNAME"] {
-    display: inline-block;
-    width: 49.2%;
-}
-
-.halfway-post input[name="FNAME"] {
-    margin-right: 5px;
-}
-
-@media only screen and (max-width: 768px) {
-    .halfway-post {
-        padding: 0;
-    }
-
-    .halfway-post input[name="FNAME"],
-    .halfway-post input[name="LNAME"] {
-        width: 100%;
-    }
+    padding: 1rem;
+    margin: .5rem 0 0;
 }
