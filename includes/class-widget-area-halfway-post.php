@@ -77,7 +77,17 @@ class WidgetAreaHalfwayPost
      */
     public function insert_sidebar($html)
     {
-        $headers = preg_split('@(?=\<h2\>)@', $html);
+        /**
+         * Only the post's own content: the_content also runs for e.g. excerpts, SEO meta and blocks outside the loop.
+         */
+        if (!in_the_loop() || !is_main_query()) {
+            return $html;
+        }
+
+        /**
+         * Match <h2> with attributes too, e.g. <h2 class="wp-block-heading" id="...">, as the block editor writes it.
+         */
+        $headers = preg_split('@(?=<h2[\s>])@i', $html);
         $middle  = (int) ceil(count($headers) / 2);
 
         ob_start();
